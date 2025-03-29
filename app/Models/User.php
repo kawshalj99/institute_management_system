@@ -52,6 +52,23 @@ class User extends Authenticatable
         return self::find($id);
     }
 
+    static public function getTotalUser($user_type)
+    {
+        return self::select('users.id')
+                        ->where('user_type','=', $user_type)
+                        ->where('is_delete','=',0)
+                        ->count();
+
+    }
+
+    static public function getSingleClass($id)
+    {
+        return self::select('users.*','class.amount', 'class.name as class_name')
+                        ->join('class', 'class.id', 'users.class_id')
+                        ->where('users.id', '=', $id)
+                        ->first();
+    }
+
     static public function SearchUser($search)
     {
         $return = self::select('users.*')
@@ -204,6 +221,24 @@ class User extends Authenticatable
 
         return $return;
     }
+
+    static public function getTeacherStudentCount($teacher_id)
+    {
+                $return = self::select('users.id')
+                ->join('class', 'class.id', '=', 'users.class_id')
+                ->join('assign_class_teacher', 'assign_class_teacher.class_id', '=', 'class.id')
+                ->where('assign_class_teacher.teacher_id', '=', $teacher_id)
+                ->where('assign_class_teacher.status','=',0)
+                ->where('assign_class_teacher.is_delete','=',0)
+                ->where('users.user_type','=',3)
+                ->where('users.is_delete','=',0)
+                ->orderBy('users.id', 'desc')
+                ->groupBy('users.id')
+                ->count();
+
+        return $return;
+    }
+    
 
     static public function getUser($user_type)
     {
@@ -384,6 +419,66 @@ class User extends Authenticatable
 
             return $return;
         
+    }
+
+    static public function getMyStudentCount($parent_id)
+    {
+        
+            $return = self::select('users.id')
+                        ->join('users as parent', 'parent.id', '=' ,'users.parent_id', 'left')
+                        ->join('class', 'class.id', '=', 'users.class_id', 'left')
+                        ->where('users.user_type','=',3)
+                        ->where('users.parent_id','=',$parent_id)
+                        ->where('users.is_delete','=',0)
+                        ->count();
+
+            return $return;
+        
+    }
+
+    static public function getMyStudentIds($parent_id)
+    {
+            $return = self::select('users.id')
+            ->join('users as parent', 'parent.id', '=' ,'users.parent_id', 'left')
+            ->join('class', 'class.id', '=', 'users.class_id', 'left')
+            ->where('users.user_type','=',3)
+            ->where('users.parent_id','=',$parent_id)
+            ->where('users.is_delete','=',0)
+            ->orderBy('users.id', 'desc')
+            ->get();
+
+            $student_ids = array();
+            foreach($return as $value)
+            {
+                $student_ids[] = $value->id;
+            }
+
+            return $student_ids;
+    }
+
+    static public function getMyStudentClassIds($parent_id)
+    {
+            $return = self::select('users.class_id')
+            ->join('users as parent', 'parent.id', '=' ,'users.parent_id')
+            ->join('class', 'class.id', '=', 'users.class_id')
+            ->where('users.user_type','=',3)
+            ->where('users.parent_id','=',$parent_id)
+            ->where('users.is_delete','=',0)
+            ->orderBy('users.id', 'desc')
+            ->get();
+
+            $class_ids = array();
+            foreach($return as $value)
+            {
+                $class_ids[] = $value->class_id;
+            }
+
+            return $class_ids;
+    }
+
+    static public function getPaidAmount($student_id, $class_id)
+    {
+       return StudentAddFeesModel::getPaidAmount($student_id, $class_id);
     }
 
     static public function getEmailSingle($email)

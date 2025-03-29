@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -16,24 +15,15 @@
           </div>
           
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
         
 
-    <!-- Main content -->
     <section class="content">
-
-
       <div class="container-fluid">
         <div class="row">
-
-          <!-- /.col -->
           <div class="col-md-12">
-            <!-- general form elements -->
-            
-
-
 
           @include('_message')
 
@@ -72,18 +62,11 @@
                 </table>
                 
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
-
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
-    <!-- /.content -->
   </div>
 
 @endsection

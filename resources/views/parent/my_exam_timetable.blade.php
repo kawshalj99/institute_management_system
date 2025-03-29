@@ -3,39 +3,28 @@
 @section('content')
 
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>Exam Timetable ({{ $getStudent->name}} {{ $getStudent->last_name}})</h1>
           </div>
-
-          
           
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
         
-
-    <!-- Main content -->
     <section class="content">
-
-
       <div class="container-fluid">
         <div class="row">
-
-          <!-- /.col -->
           <div class="col-md-12">
             @include('_message')
-            <!-- general form elements -->
              @foreach($getRecord as $value) 
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">{{ $value['name']}}</h3>
               </div>
-              <!-- /.card-header -->
               <div class="card-body p-0">
                 <table class="table table-striped">
                   <thead>
@@ -62,27 +51,15 @@
                         </tr>
                       @endforeach
                   </tbody>
-                </table>
-               
-                
-               
+                </table>  
               </div>
-              <!-- /.card-body -->
             </div>
             @endforeach
-    
-
-   
 
           </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
-
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
-    <!-- /.content -->
   </div>
 
 @endsection

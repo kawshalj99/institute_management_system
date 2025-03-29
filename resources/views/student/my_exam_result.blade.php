@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -11,15 +10,11 @@
             <h1>My Exam Result</h1>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
         
-
-    <!-- Main content -->
     <section class="content">
-
-
       <div class="container-fluid">
         <div class="row">
 
@@ -29,7 +24,6 @@
               <div class="card-header">
                 <h3 class="card-title">{{$value['exam_name']}}</h3>
               </div>
-              <!-- /.card-header -->
               <div class="card-body p-0">
                 <table class="table table-striped">
                   <thead>
@@ -74,18 +68,12 @@
                 </table>
                 
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
           </div>
           @endforeach
         </div>
-        <!-- /.row -->
-
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
-    <!-- /.content -->
   </div>
 
 @endsection

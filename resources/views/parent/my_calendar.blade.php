@@ -11,7 +11,6 @@
 @endsection
 
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -19,24 +18,18 @@
             <h1>Student Calendar - ({{$getStudent->name}} {{$getStudent->last_name}})</h1>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
-    <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <!-- left column -->
           <div class="col-md-12">
             <div id="calendar"></div>
           </div>
-
-        
         </div>
-       
       </div>
     </section>
-    
   </div>
 
 

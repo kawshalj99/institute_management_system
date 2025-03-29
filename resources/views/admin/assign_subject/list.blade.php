@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -16,21 +15,16 @@
           </div>
           
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
         
 
-    <!-- Main content -->
+
     <section class="content">
-
-
       <div class="container-fluid">
         <div class="row">
-
-          <!-- /.col -->
           <div class="col-md-12">
-            <!-- general form elements -->
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Search Assign Subject</h3>
@@ -67,7 +61,6 @@
               <div class="card-header">
                 <h3 class="card-title">Class Table</h3>
               </div>
-              <!-- /.card-header -->
               <div class="card-body p-0">
                 <table class="table table-striped">
                   <thead>
@@ -110,18 +103,11 @@
                 {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!}
                 </div>
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
-
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
-    <!-- /.content -->
   </div>
 
 @endsection

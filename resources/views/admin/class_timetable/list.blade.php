@@ -3,33 +3,25 @@
 @section('content')
 
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>Class Timetable</h1>
-          </div>
-
-          
+          </div> 
           
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
         
 
-    <!-- Main content -->
+
     <section class="content">
-
-
       <div class="container-fluid">
         <div class="row">
-
-          <!-- /.col -->
           <div class="col-md-12">
             @include('_message')
-            <!-- general form elements -->
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Search Class Timetable</h3>
@@ -77,7 +69,6 @@
               <div class="card-header">
                 <h3 class="card-title">Class Timetable</h3>
               </div>
-              <!-- /.card-header -->
               <div class="card-body p-0">
                 <table class="table table-striped">
                   <thead>
@@ -116,25 +107,17 @@
                 </table>
                 <div style="text-align:center; padding:20px;">
                 <button class="btn btn-primary">Submit</button>
-                </div>
-                
-               
+                </div>  
               </div>
-              <!-- /.card-body -->
             </div>
             </form>
 
             @endif
 
           </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
-
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
-    <!-- /.content -->
   </div>
 
 @endsection

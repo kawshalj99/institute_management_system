@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -12,19 +11,15 @@
           </div>
           
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
         
 
-    <!-- Main content -->
+  
     <section class="content">
-
-
       <div class="container-fluid">
         <div class="row">
-
-          <!-- /.col -->
           <div class="col-md-12">
           @include('_message')
 
@@ -32,22 +27,21 @@
               <div class="card-header">
                 <h3 class="card-title">My Student Table</h3>
               </div>
-              <!-- /.card-header -->
               <div class="card-body p-0" style="overflow: auto;">
                 <table class="table table-striped">
                   <thead>
                     <tr>
-                      <th>Profile Pic</th>
-                      <th>Student Name</th>
-                      <th>Email</th>
+                      <th style="min-width: 100px;">Profile Pic</th>
+                      <th style="min-width: 180px;">Student Name</th>
+                      <th style="min-width: 150px;">Email</th>
                       <th>Admission Number</th>
-                      <th>Admission Date</th>
+                      <th style="min-width: 120px;">Admission Date</th>
                       <th>Roll Number</th>
                       <th>Class</th>
                       <th>Gender</th>
-                      <th>Date of Birth</th>
+                      <th style="min-width: 120px;">Date of Birth</th>
                       <th>Mobile Number</th>
-                      <th>Created Date</th>
+                      <th style="min-width: 120px;">Created Date</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -84,18 +78,11 @@
                 
                 </div>
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
-
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
-    <!-- /.content -->
   </div>
 
 @endsection

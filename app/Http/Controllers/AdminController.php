@@ -73,9 +73,17 @@ class AdminController extends Controller
     public function delete($id)
     {
         $user = User::getSingle($id);
-        $user->is_delete = 1;
-        $user->save();
+        if($user->id == 1)
+        {
+            return redirect('admin/admin/list')->with('warning', "You do not have permission to delete this user");
+        }
+        else
+        {
+            $user->is_delete = 1;
+            $user->save();
 
         return redirect('admin/admin/list')->with('success', "Admin Successfully deleted");
+        }
+        
     }
 }

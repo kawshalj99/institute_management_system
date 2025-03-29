@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -15,21 +14,14 @@
           </div>
           
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
         
-
-    <!-- Main content -->
     <section class="content">
-
-
       <div class="container-fluid">
         <div class="row">
-
-          <!-- /.col -->
           <div class="col-md-12">
-            <!-- general form elements -->
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Search Student</h3>
@@ -73,7 +65,6 @@
               <div class="card-header" >
                 <h3 class="card-title">Student Table</h3>
               </div>
-              <!-- /.card-header -->
               <div class="card-body p-0" style="overflow:auto;">
                 <table class="table table-striped">
                   <thead>
@@ -119,7 +110,6 @@
               <div class="card-header" >
                 <h3 class="card-title">Assigned Student Table</h3>
               </div>
-              <!-- /.card-header -->
               <div class="card-body p-0" style="overflow:auto;">
               <table class="table table-striped">
                   <thead>
@@ -160,14 +150,9 @@
               
             </div>
           </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
-
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
-    <!-- /.content -->
   </div>
 
 @endsection

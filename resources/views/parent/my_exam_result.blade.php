@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -11,25 +10,19 @@
             <h1>Student Exam Result <span>({{$getStudent->name}} {{$getStudent->last_name}})</span></h1>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
         
-
-    <!-- Main content -->
     <section class="content">
-
-
       <div class="container-fluid">
         <div class="row">
-
-          @foreach($getRecord as $value)
+          @forelse($getRecord as $value)
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">{{$value['exam_name']}}</h3>
               </div>
-              <!-- /.card-header -->
               <div class="card-body p-0">
                 <table class="table table-striped">
                   <thead>
@@ -45,7 +38,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                      @foreach($value['subject'] as $exam)
+                      @forelse($value['subject'] as $exam)
                      <tr>
                       <td>{{$exam['subject_name']}}</td>
                       <td>{{$exam['assignment_marks']}}</td>
@@ -69,23 +62,24 @@
                       @endif
                       </td>
                      </tr>
-                     @endforeach
+                     @empty
+                      <tr>
+                        <td colspan="100%">Record not Found</td>
+                      </tr>
+                     @endforelse
                   </tbody>
                 </table>
-                
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
           </div>
-          @endforeach
+          @empty
+            <tr>
+              <td colspan="100%">Record not Found</td>
+            </tr>
+          @endforelse
         </div>
-        <!-- /.row -->
-
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
-    <!-- /.content -->
   </div>
 
 @endsection

@@ -13,7 +13,6 @@
 @section('content')
 
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -21,17 +20,15 @@
             <h1>Send Email</h1>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
-    <!-- Main content -->
+
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <!-- left column -->
           <div class="col-md-12">
             @include('_message')
-            <!-- general form elements -->
             <div class="card card-primary">
               <form method="post" action="">
                 {{ csrf_field() }}
@@ -68,15 +65,10 @@
                 </div>
               </form>
             </div>
-
-          </div>
-
-        
+          </div>       
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
-    <!-- /.content -->
   </div>
 
 

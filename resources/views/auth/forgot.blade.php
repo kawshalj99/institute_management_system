@@ -6,21 +6,35 @@
   <title>Forgot Password - IMS</title>
   <link rel="icon" href="{{url('public/assets/dist/img/logo.png')}}" type="image/x-icon">
 
-  <!-- Google Font: Source Sans Pro -->
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
+
   <link rel="stylesheet" href="public/assets/plugins/fontawesome-free/css/all.min.css">
-  <!-- icheck bootstrap -->
+
   <link rel="stylesheet" href="public/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- Theme style -->
+
   <link rel="stylesheet" href="public/assets/dist/css/adminlte.min.css">
+
+  <style>
+   
+   body {
+     background-image: url('public/assets/dist/img/10135315_18129294.jpg');
+     background-size: cover; 
+     background-position: center; 
+     background-repeat: no-repeat; 
+   }
+
+   .login-page {
+     background-color: rgba(0, 0, 0, 0.5); 
+   }
+ </style>
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
 <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="{{url('public/assets/dist/img/logo.png')}}" alt="AdminLTELogo" height="80" width="80">
   </div>
-  <!-- /.login-logo -->
+
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
       <img src="{{url('public/assets/dist/img/logo.png')}}" alt="logo" height="80" width="80" style="align-item: center; border-radius: 50%;">
@@ -44,32 +58,32 @@
 
         <div class="row">
 
-          <!-- /.col -->
+
           <div class="col-4 ">
             <button type="submit" class="btn btn-primary btn-block">Continue</button>
           </div>
-          <!-- /.col -->
+
         </div>
       </form>
 
-      <!-- /.social-auth-links -->
+
 
       <p class="mb-1">
         <br>
         
       </p>
       
-    <!-- /.card-body -->
-  </div>
-  <!-- /.card -->
-</div>
-<!-- /.login-box -->
 
-<!-- jQuery -->
+  </div>
+
+</div>
+
+
+
 <script src="public/assets/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
+
 <script src="public/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
+
 <script src="public/assets/dist/js/adminlte.min.js"></script>
 </body>
 </html>

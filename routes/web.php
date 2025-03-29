@@ -119,6 +119,9 @@ Route::group(['middleware' => 'admin'], function() {
     Route::get('admin/account', [UserController::class, 'MyAccount']);
     Route::post('admin/account', [UserController::class, 'UpdateMyAccountAdmin']);
 
+    Route::get('admin/settings', [UserController::class, 'Settings']);
+    Route::post('admin/settings', [UserController::class, 'UpdateSettings']);
+
     //change password
 
     Route::get('admin/change_password', [UserController::class, 'change_password']);
@@ -203,9 +206,11 @@ Route::group(['middleware' => 'admin'], function() {
     //fee collection
 
     Route::get('admin/fee_collection/collect_fee', [FeeCollectionController::class, 'collect_fee']);
+    Route::get('admin/fee_collection/collect_fee/add_fee/{student_id}', [FeeCollectionController::class, 'collect_fee_add']);
+    Route::post('admin/fee_collection/collect_fee/add_fee/{student_id}', [FeeCollectionController::class, 'collect_fee_insert']);
 
 
-    //admin/fee_collection/collect_fee/add_fee
+   
     
 
     
@@ -290,6 +295,10 @@ Route::group(['middleware' => 'student'], function() {
     Route::post('student/my_homework/submit_homework/{id}', [HomeworkController::class, 'SubmitHomeworkInsert']);
 
     Route::get('student/my_submitted_homework', [HomeworkController::class, 'HomeworkSubmittedStudent']);
+
+    Route::get('student/fee_collection', [FeeCollectionController::class, 'CollectFeeStudent']);
+
+    Route::post('student/fee_collection', [FeeCollectionController::class, 'CollectFeeStudentPayment']);
     
     
 
@@ -326,6 +335,8 @@ Route::group(['middleware' => 'parent'], function() {
     Route::get('parent/my_student/homework/{id}', [HomeworkController::class, 'HomeworkStudentParent']);
 
     Route::get('parent/my_student/submitted_homework/{id}', [HomeworkController::class, 'SubmittedHomeworkStudentParent']);
+
+    Route::get('parent/my_student/fee_collection/{student_id}', [FeeCollectionController::class, 'CollectFeeParent']);
 
 
     

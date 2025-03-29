@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -12,21 +11,14 @@
           </div>
           
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
         
-
-    <!-- Main content -->
     <section class="content">
-
-
       <div class="container-fluid">
         <div class="row">
-
-          <!-- /.col -->
           <div class="col-md-12">
-            <!-- general form elements -->
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Search Collect Fees</h3>
@@ -76,7 +68,6 @@
               <div class="card-header">
                 <h3 class="card-title">Student Table</h3>
               </div>
-              <!-- /.card-header -->
               <div class="card-body p-0">
                 <table class="table table-striped">
                   <thead>
@@ -86,6 +77,7 @@
                       <th>Class Name</th>
                       <th>Total Fee Amount (LKR)</th>
                       <th>Paid Amount (LKR)</th>
+                      <th>Due Amount (LKR)</th>
                       <th>Created Date</th>
                       <th>Action</th>
                     </tr>
@@ -93,15 +85,21 @@
                   <tbody>
                       @if(!empty($getRecord))
                         @forelse($getRecord as $value)
+                            @php
+                              $paid_amount = $value->getPaidAmount($value->id, $value->class_id);
+
+                              $RemainingAmount = $value->amount - $paid_amount;
+                            @endphp
                           <tr>
                             <td>{{$value->id}}</td>
                             <td>{{$value->name}} {{$value->last_name}}</td>
                             <td>{{$value->class_name}}</td>
                             <td>{{number_format($value->amount,2)}}</td>
-                            <td>0.00</td>
+                            <td>{{number_format($paid_amount,2)}}</td>
+                            <td>{{number_format($RemainingAmount,2)}}</td>
                             <td>{{date('d-m-Y', strtotime($value->created_at))}}</td>
                             <td>
-                                <a href="{{url('admin/fee_collection/collect_fee/add_fee')}}" class="btn btn-success">Collect Fees</a>
+                                <a href="{{url('admin/fee_collection/collect_fee/add_fee/'.$value->id)}}" class="btn btn-success">Collect Fees</a>
                             </td>
                           </tr>
                         @empty
@@ -122,18 +120,11 @@
                   @endif
                 </div>
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
-
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
-    <!-- /.content -->
   </div>
 
 @endsection

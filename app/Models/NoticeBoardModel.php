@@ -74,6 +74,20 @@ class NoticeBoardModel extends Model
         return $return;
     }
 
+    static public function getRecordUserCount($message_to)
+    {
+        $return = NoticeBoardModel::select('notice_board.id')
+        ->join('users', 'users.id', '=', 'notice_board.created_by');
+        $return = $return->join('notice_board_message', 'notice_board_message.notice_board_id', '=', 'notice_board.id');
+
+        $return = $return->where('notice_board_message.message_to', '=', $message_to );
+        $return = $return->where('notice_board.publish_date', '<=', date('Y-m-d'));
+        $return = $return->orderBy('notice_board.id', 'desc')
+                ->count();
+
+        return $return;
+    }
+
     public function getMessage()
     {
         return $this->hasMany(NoticeBoardMessageModel::class, 'notice_board_id');

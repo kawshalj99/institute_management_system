@@ -6,34 +6,92 @@
   <title>{{!empty($header_title) ? $header_title : ''}} - IMS</title>
   <link rel="icon" href="{{url('public/assets/dist/img/logo.png')}}" type="image/x-icon">
 
-  <!-- Google Font: Source Sans Pro -->
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
+
   <link rel="stylesheet" href="{{url('public/assets/plugins/fontawesome-free/css/all.min.css')}}">
-  <!-- Ionicons -->
+
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bootstrap 4 -->
+
   <link rel="stylesheet" href="{{url('public/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
-  <!-- iCheck -->
+
   <link rel="stylesheet" href="{{url('public/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
-  <!-- JQVMap -->
+
   <link rel="stylesheet" href="{{url('public/assets/plugins/jqvmap/jqvmap.min.css')}}">
-  <!-- Theme style -->
+
   <link rel="stylesheet" href="{{url('public/assets/dist/css/adminlte.min.css')}}">
-  <!-- overlayScrollbars -->
+
   <link rel="stylesheet" href="{{url('public/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
-  <!-- Daterange picker -->
+
   <link rel="stylesheet" href="{{url('public/assets/plugins/daterangepicker/daterangepicker.css')}}">
-  <!-- summernote -->
+
   <link rel="stylesheet" href="{{url('public/assets/plugins/summernote/summernote-bs4.min.css')}}">
 
   @yield('style')
+  <style>
+  body {
+    background-image: url('{{ asset('public/assets/dist/img/10135315_18129294.jpg') }}'); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 100vh; 
+  }
+
+  
+  .content-wrapper {
+    background-color: rgba(255, 255, 255, 0.1); 
+    padding: 20px;
+    border-radius: 10px;
+    
+  }
+</style>
+
+<style>
+
+  .main-sidebar {
+    background-color:rgb(80, 0, 115); 
+  }
+
+
+  .main-sidebar .nav-link {
+    color: #ecf0f1; 
+  }
+
+
+  .main-sidebar .nav-link:hover {
+    background-color: #AD49E1; 
+    color: #ffffff; 
+  }
+
+
+  .brand-link {
+    background-color: rgb(80, 0, 115);  
+    color: #ffffff;
+  }
+
+ 
+  .main-sidebar .nav-icon {
+    color: #EBD3F8; 
+  }
+
+
+  .main-sidebar .nav-pills .nav-link.active {
+    background-color: #27ae60;
+    color: #ffffff; 
+  }
+
+
+  .main-header {
+    background-color:#EBD3F8; 
+  }
+</style>
+
   
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-  <!-- Preloader -->
+
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="{{url('public/assets/dist/img/logo.png')}}" alt="AdminLTELogo" height="80" width="80">
   </div>
@@ -46,41 +104,41 @@
 
 
 </div>
-<!-- ./wrapper -->
 
-<!-- jQuery -->
+
+
 <script src="{{url('public/assets/plugins/jquery/jquery.min.js')}}"></script>
-<!-- jQuery UI 1.11.4 -->
+
 <script src="{{url('public/assets/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
-<!-- Bootstrap 4 -->
+
 <script src="{{url('public/assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- ChartJS -->
+
 <script src="{{url('public/assets/plugins/chart.js/Chart.min.js')}}"></script>
-<!-- Sparkline -->
+
 <script src="{{url('public/assets/plugins/sparklines/sparkline.js')}}"></script>
-<!-- JQVMap -->
+
 <script src="{{url('public/assets/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
 <script src="{{url('public/assets/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
-<!-- jQuery Knob Chart -->
+
 <script src="{{url('public/assets/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
-<!-- daterangepicker -->
+
 <script src="{{url('public/assets/plugins/moment/moment.min.js')}}"></script>
 <script src="{{url('public/assets/plugins/daterangepicker/daterangepicker.js')}}"></script>
-<!-- Tempusdominus Bootstrap 4 -->
+
 <script src="{{url('public/assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
-<!-- Summernote -->
+
 <script src="{{url('public/assets/plugins/summernote/summernote-bs4.min.js')}}"></script>
-<!-- overlayScrollbars -->
+
 <script src="{{url('public/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
-<!-- AdminLTE App -->
+
 <script src="{{url('public/assets/dist/js/adminlte.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
+
 <script src="{{url('public/assets/dist/js/demo.js')}}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+
 <script src="{{url('public/assets/dist/js/pages/dashboard.js')}}"></script>
 
 @yield('script')

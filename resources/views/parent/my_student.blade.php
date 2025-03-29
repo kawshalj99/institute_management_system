@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -15,47 +14,39 @@
           </div>
           
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
         
 
-    <!-- Main content -->
+
     <section class="content">
-
-
       <div class="container-fluid">
         <div class="row">
-
-          <!-- /.col -->
           <div class="col-md-12">
-            <!-- general form elements -->
-
-
 
           @include('_message')
 
 
             <div class="card">
               <div class="card-header" >
-                <h3 class="card-title">Assigned Student Table</h3>
+                <h3 class="card-title">My Student Table</h3>
               </div>
-              <!-- /.card-header -->
               <div class="card-body p-0" style="overflow:auto;">
               <table class="table table-striped">
                   <thead>
                     <tr>
-                      <th>Profile Picture</th>
-                      <th>Student Name</th>
-                      <th>Email</th>
+                      <th style="min-width: 100px;">Profile Picture</th>
+                      <th style="min-width: 180px;">Student Name</th>
+                      <th style="min-width: 150px;">Email</th>
                       <th>Admission Number</th>
-                      <th>Admission Date</th>
+                      <th style="min-width: 120px;">Admission Date</th>
                       <th>Roll Number</th>
                       <th>Class</th>
                       <th>Gender</th>
-                      <th>Date of Birth</th>
+                      <th style="min-width: 120px;">Date of Birth</th>
                       <th>Mobile Number</th>
-                      <th>Created Date</th>
+                      <th style="min-width: 120px;">Created Date</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -85,14 +76,15 @@
                         </td>
                         <td>{{ $value->mobile_number}}</td>
                         <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
-                        <td style="min-width: 780px;">
-                          <a class="btn btn-success btn-sm" href="{{ url('parent/my_student/subject/'.$value->id)}}">Subject</a>
-                          <a class="btn btn-primary btn-sm" href="{{ url('parent/my_student/exam_timetable/'.$value->id)}}">Exam Timetable</a>
-                          <a class="btn btn-secondary btn-sm" href="{{ url('parent/my_student/exam_result/'.$value->id)}}">Exam Result</a>
-                          <a class="btn btn-warning btn-sm" href="{{ url('parent/my_student/calendar/'.$value->id)}}">Student Calendar</a>
-                          <a class="btn btn-danger btn-sm" href="{{ url('parent/my_student/attendance/'.$value->id)}}">Attendance</a>
-                          <a class="btn btn-success btn-sm" href="{{ url('parent/my_student/homework/'.$value->id)}}">Homework</a>
-                          <a class="btn btn-primary btn-sm" href="{{ url('parent/my_student/submitted_homework/'.$value->id)}}">Submitted Homework</a>
+                        <td style="min-width: 430px;">
+                          <a style="margin-bottom: 5px;" class="btn btn-success btn-sm" href="{{ url('parent/my_student/subject/'.$value->id)}}">Subject</a>
+                          <a style="margin-bottom: 5px;" class="btn btn-primary btn-sm" href="{{ url('parent/my_student/exam_timetable/'.$value->id)}}">Exam Timetable</a>
+                          <a style="margin-bottom: 5px;" class="btn btn-secondary btn-sm" href="{{ url('parent/my_student/exam_result/'.$value->id)}}">Exam Result</a>
+                          <a style="margin-bottom: 5px;" class="btn btn-warning btn-sm" href="{{ url('parent/my_student/calendar/'.$value->id)}}">Student Calendar</a>
+                          <a style="margin-bottom: 5px;" class="btn btn-danger btn-sm" href="{{ url('parent/my_student/attendance/'.$value->id)}}">Attendance</a>
+                          <a style="margin-bottom: 5px;" class="btn btn-success btn-sm" href="{{ url('parent/my_student/homework/'.$value->id)}}">Homework</a>
+                          <a style="margin-bottom: 5px;" class="btn btn-primary btn-sm" href="{{ url('parent/my_student/submitted_homework/'.$value->id)}}">Submitted Homework</a>
+                          <a style="margin-bottom: 5px;" class="btn btn-secondary btn-sm" href="{{ url('parent/my_student/fee_collection/'.$value->id)}}">Fee Collection</a>
                         </td>
                       </tr>
                       @endforeach
